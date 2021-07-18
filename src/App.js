@@ -1,14 +1,26 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import {Logo} from "./logo/logo";
-import {CheckBox} from "./components/filter/checkBox";
+import {Filter} from "./components/filter/filter";
+import {Content} from "./components/content/content";
+import content from './components/content/content.module.css';
+import {aviasalesApi} from "./api/api";
+import {getTicketsThunk} from "./redux/reducers/ticketsReducer";
+import {useDispatch} from "react-redux";
 
 function App() {
+    const dispatch = useDispatch();
+
+    useEffect(()=> {
+        aviasalesApi.getKey();
+        dispatch(getTicketsThunk(localStorage.getItem('key')))
+    }, [])
     return (
-        <>
+        <div className={content.main}>
             <Logo/>
-            <CheckBox/>
-        </>
+            <Filter/>
+            <Content/>
+        </div>
     );
 }
 

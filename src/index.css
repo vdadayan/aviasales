@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+body {
+  background: #F3F7FA;
+}
+#root {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+svg {
+  width: 100%;
+}
