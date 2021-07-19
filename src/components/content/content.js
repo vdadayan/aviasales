@@ -7,7 +7,6 @@ import {useSelector} from "react-redux";
 export const Content = () => {
     const tickets = useSelector(state => state.tickets.tickets.slice(1, 10));
 
-    console.log(tickets)
     return (
         <div className={content.contentWrapper}>
             <div className={content.tabsWrapper}>
@@ -16,9 +15,9 @@ export const Content = () => {
                 <Tab text={"оптимальный"}/>
             </div>
             <div className={content.tickets}>
-                {tickets?.map(item => {
+                {tickets?.map((item, i) => {
                     return (
-                        <Ticket item={item}/>
+                        <Ticket key={i} item={item}/>
                     )
                 })}
             </div>

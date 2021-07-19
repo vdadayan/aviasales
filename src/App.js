@@ -14,7 +14,7 @@ function App() {
     useEffect(()=> {
         aviasalesApi.getKey();
         dispatch(getTicketsThunk(localStorage.getItem('key')))
-    }, [])
+    }, [dispatch])
     return (
         <div className={content.main}>
             <Logo/>

@@ -10,9 +10,9 @@ export const Ticket = ({item}) => {
                 <Price price={item.price}/>
                 <div>ICON</div>
             </div>
-            {item.segments?.map(ticket => {
-                return(
-                    <Row item={ticket}/>
+            {item.segments?.map((ticket, i) => {
+                return (
+                    <Row key={i} item={ticket}/>
                 )
             })}
         </div>
