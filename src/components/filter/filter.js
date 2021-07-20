@@ -4,8 +4,10 @@ import styles from './styles.module.css'
 import {useSelector} from "react-redux";
 
 export const Filter = () => {
-    const items = useSelector(state => state.tickets.tickets.slice(1, 10));
-    console.log(items);
+    // const items = useSelector(state => state.tickets.tickets.slice(1, 10));
+    // const newArr = items?.filter(item => item.segments.length === Number('1'))
+    // console.log(items)
+    // console.log(newArr)
 
     return (
         <div className={styles.filterWrap}>

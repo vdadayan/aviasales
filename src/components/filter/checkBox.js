@@ -1,13 +1,15 @@
 import React from "react";
 import styles from './styles.module.css';
+import {useDispatch} from "react-redux";
+import {getTicketsFilter1} from "../../redux/reducers/ticketsReducer";
 
 export const CheckBox = (props) => {
+    const dispatch = useDispatch()
 
     const filterClick = (e) => {
         try {
-            console.log(e.target.control.id)
-        }
-        catch (error) {
+            dispatch(getTicketsFilter1(e.target.control.id))
+        } catch (error) {
         }
     }
     return (

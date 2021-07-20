@@ -5,7 +5,8 @@ import {Ticket} from "../ticket/ticket";
 import {useSelector} from "react-redux";
 
 export const Content = () => {
-    const tickets = useSelector(state => state.tickets.tickets.slice(1, 10));
+    const tickets = useSelector(state => state.tickets.tickets);
+    console.log(tickets)
 
     return (
         <div className={content.contentWrapper}>
