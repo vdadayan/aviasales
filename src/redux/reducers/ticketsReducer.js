@@ -7,6 +7,16 @@ const TICKETS_FILTER_1 = "TICKETS_FILTER_1";
 const initialState = {
     tickets: [],
 }
+const a = (tickets, n) =>{
+    const items = tickets.filter(item=>{
+        return item.segments.find(item2 =>{
+            if(item2.stops.length === n){
+                return item
+            }
+        })
+    })
+    return items
+}
 
 export const getTicketsReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -19,7 +29,7 @@ export const getTicketsReducer = (state = initialState, action) => {
         case TICKETS_FILTER_1: {
             return {
                 ...state,
-                tickets: [state.tickets.filter(item=> item.segments[0].stops.length === Number(action.data) || item.segments[1].stops.length === Number(action.data))]
+                tickets: [...a(state.tickets,Number(action.data))]
             }
         }
         default:

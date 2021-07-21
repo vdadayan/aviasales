@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import content from './content.module.css'
 import {Tab} from "../tab/tab";
 import {Ticket} from "../ticket/ticket";
@@ -8,6 +8,9 @@ export const Content = () => {
     const tickets = useSelector(state => state.tickets.tickets);
     console.log(tickets)
 
+    useEffect(() => {
+
+    },[tickets])
     return (
         <div className={content.contentWrapper}>
             <div className={content.tabsWrapper}>
